@@ -260,6 +260,7 @@ DEPENDENCIES
   github-pages (~> 214)
   jekyll-feed (~> 0.12)
   jekyll-theme-hacker (~> 0.1)
+  jemoji (~> 0.12)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
