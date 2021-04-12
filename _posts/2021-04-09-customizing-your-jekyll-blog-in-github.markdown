@@ -77,7 +77,7 @@ contain the tag.
 This will show the tags you've used for your post, wherever you placed it in the layout
 (In this post, they are located between the Title-author and the main content)
 
-* create  a `refresh_tags.py` script in your site root (Python3): 
+* create  a `refresh_tags.py` script in your site repo root (Python3): 
 {% highlight python %}
 #!/usr/bin/env python
 
@@ -125,13 +125,15 @@ print('-- tags refreshed.')
 
 {% endhighlight %}
 
-* call the refresh_tags.py script (from your site root) prior everytime you add a tag to 
+* call the refresh_tags.py script (from your site repo root) prior everytime you add a tag to 
 a post:
 
 {% highlight shell %}
 >> python refresh_tags.py
 {% endhighlight %}
 
+This script will create a `./tags` folder, where all your tag index pages will be stored (like this:
+`./tags/tag_name/index.html`)
 ## Adding Latex Math formulas with MathJax
 
 Add the following to the `<head>` section of `_layouts/default.html`:
@@ -169,39 +171,6 @@ to your `./_posts/post.html` layout, where you want the comment section to be (c
 {% endhighlight %}
 
 See [their site][utterance-site] for more information on configuration options.
-
-## Syntax Highlighting
-
-Jekyll supports syntax highlighting. If you write the following in your markdown
-
-{% highlight plaintext %}
-{% raw %}
-{% highlight python %}
-import matplotlib.pyplot as plt
-figure(1)
-plt([1,2,3],[4,5,6],'ro-')
-plt.show()
-{% endhighlight %}
-{% endraw %}
-{% endhighlight %}
-
-it will be rendered as follows
-
-{% highlight python %}
-import matplotlib.pyplot as plt
-figure(1)
-plt([1,2,3],[4,5,6],'ro-')
-plt.show()
-{% endhighlight %}
-
-To find out the list of supported languages in command line, grep the language you're searching for from rougify, e.g.:
-
-{% highlight plaintext %}
-rougify list | grep verilog
-verilog: The System Verilog hardware description language
-{% endhighlight %}
-
-
 
 [github-jekyll-docs]: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll
 [jekyll-docs]: https://jekyllrb.com/docs/
